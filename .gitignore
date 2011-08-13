@@ -1,0 +1,9 @@
+.settings
+.classpath
+.project
+target
+opendevshare-android/gen
+opendevshare-android/target
+opendevshare-core/target
+opendevshare-instrumentation/gen
+opendevshare-instrumentation/target
