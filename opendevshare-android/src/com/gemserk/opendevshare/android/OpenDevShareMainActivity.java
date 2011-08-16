@@ -37,20 +37,25 @@ public class OpenDevShareMainActivity extends Activity {
 		});
 	}
 
-	
 	public void downloadAndInstallAPK(String url) {
-		File externalFilesDir = getExternalFilesDir(null);
-		final String finalApkFile = externalFilesDir.getAbsolutePath() + "/downloadedapk.apk";
-		 DownloadManager downloadManager = new DownloadManager(this){
+
+		String packageName = this.getPackageName();
+		File externalPath = Environment.getExternalStorageDirectory();
+		File appFiles = new File(externalPath.getAbsolutePath() + "/Android/data/" + packageName + "/files");
+		appFiles.mkdirs();
+		
+
+		final String finalApkFile = new File(appFiles, "/downloadedapk.apk").getAbsolutePath();
+		DownloadManager downloadManager = new DownloadManager(this) {
 			@Override
 			protected void onPostExecute(Drawable result) {
 				super.onPostExecute(result);
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.setDataAndType(Uri.fromFile(new File(finalApkFile)), "application/vnd.android.package-archive");
-				startActivity(intent);  
-			} 
-		 };
-		
+				startActivity(intent);
+			}
+		};
+
 		downloadManager.execute("http://www.gemserk.com/private/prototipos/superflyingthing-latest/superflyingthing-android.apk", finalApkFile);
 	}
 }
