@@ -11,5 +11,7 @@
         />
     <Button android:text="Latest" android:id="@+id/button_latest" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
     <Button android:text="Stable" android:id="@+id/button_stable" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="Market" android:id="@+id/button_market" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+    <Button android:text="Uninstall" android:id="@+id/button_uninstall" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 </LinearLayout>
 
