@@ -80,9 +80,9 @@ public class OpenDevShareMainActivity extends Activity {
 
 	public void checkStatusOfButtons() {
 		boolean app_installed = isPackageInstalled(packageName);
-		buttonlatest.setEnabled(!app_installed);
-		buttonstable.setEnabled(!app_installed);
-		buttonmarket.setEnabled(!app_installed);
+//		buttonlatest.setEnabled(!app_installed);
+//		buttonstable.setEnabled(!app_installed);
+//		buttonmarket.setEnabled(!app_installed);
 		buttonUninstall.setEnabled(app_installed);
 	}
 	
